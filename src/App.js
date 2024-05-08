@@ -27,8 +27,14 @@ function App() {
     });
     setText('');
     setUsername('');
-    setDisplayedText(text);
-    setDisplayedAuthor(username);
+    fetch(`${process.env.REACT_APP_EC2_IP}/api/text`)
+      .then(res => res.json())
+      .then(data => {
+        let text = data.text.split("by")[0]
+        let author = data.text.split("by")[1]
+        setDisplayedText(text);
+        setDisplayedAuthor(author)
+      });
   };
 
   return (
