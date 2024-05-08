@@ -25,8 +25,8 @@ function App() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, username }),
     });
-    setText('');
-    setUsername('');
+    setText(text);
+    setUsername(username);
   };
 
   return (
