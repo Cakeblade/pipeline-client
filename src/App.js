@@ -27,10 +27,8 @@ function App() {
     });
     setText('');
     setUsername('');
-    useEffect(() => {
-      setDisplayedText(text);
-      setDisplayedAuthor(username);
-    });
+    setDisplayedText(text);
+    setDisplayedAuthor(username);
   };
 
   return (
