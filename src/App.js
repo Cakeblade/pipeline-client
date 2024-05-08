@@ -25,8 +25,12 @@ function App() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, username }),
     });
-    setText(text);
-    setUsername(username);
+    setText('');
+    setUsername('');
+    useEffect(() => {
+      setDisplayedText(text);
+      setDisplayedAuthor(username);
+    });
   };
 
   return (
